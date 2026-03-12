@@ -1,3 +1,4 @@
+import supabase from "./supabase.js"
 <!-- javascript: logic (separated in script.js style) -->
     (function() {
         // --- DATA STORES (initial samples) ---
