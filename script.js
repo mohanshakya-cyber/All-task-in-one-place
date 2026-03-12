@@ -1,5 +1,4 @@
 <!-- javascript: logic (separated in script.js style) -->
-<script>
     (function() {
         // --- DATA STORES (initial samples) ---
         let tasks = [
@@ -259,4 +258,4 @@
 
         // extra: pressing enter not needed but fine.
     })();
-</script>
+
