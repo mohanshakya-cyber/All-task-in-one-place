@@ -1,4 +1,4 @@
- <style>
+
         /* style.css – modern, minimal, organised */
         * {
             margin: 0;
@@ -251,4 +251,4 @@
         .mt-2 { margin-top: 10px; }
         .flex { display: flex; align-items: center; gap: 10px; }
         .text-small { font-size: 0.8rem; color: #6f7d9a; }
-    </style>
+    
