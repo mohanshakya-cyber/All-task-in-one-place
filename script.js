@@ -1,5 +1,7 @@
 import supabase from "./supabase.js"
-<!-- javascript: logic (separated in script.js style) -->
+
+// javascript: logic (separated in script.js style)
+(function() {
     (function() {
         // --- DATA STORES (initial samples) ---
         let tasks = [
