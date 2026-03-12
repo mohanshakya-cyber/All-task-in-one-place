@@ -1,1 +1,254 @@
+ <style>
+        /* style.css – modern, minimal, organised */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background: #f4f7fb;
+            padding: 24px 20px;
+            color: #1e2b3c;
+        }
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
+        /* header */
+        .header {
+            margin-bottom: 32px;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #0b1e2e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header h1 i {
+            color: #3b82f6;
+            font-size: 2rem;
+        }
+        .subhead {
+            color: #4b587c;
+            font-weight: 400;
+            margin-top: 4px;
+            font-size: 1rem;
+        }
+
+        /* dashboard grid – 4 cards on top, then main 2‑column */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 24px;
+            padding: 20px 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,20,50,0.03);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.7);
+            transition: all 0.2s;
+        }
+        .stat-card:hover { box-shadow: 0 14px 28px rgba(0,0,0,0.04); }
+        .stat-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: #5e6f8d;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #14273e;
+            line-height: 1.2;
+        }
+        .stat-detail {
+            font-size: 0.85rem;
+            color: #3b82f6;
+            margin-top: 6px;
+        }
+
+        /* main two column layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr;
+            gap: 24px;
+        }
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.02);
+            border: 1px solid #f0f3f9;
+            margin-bottom: 24px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .card-header h2 {
+            font-size: 1.4rem;
+            font-weight: 550;
+            color: #172c3c;
+        }
+        .card-header i { color: #3b82f6; margin-right: 6px; }
+
+        .badge {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* task list */
+        .task-item, .goal-item, .challenge-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .task-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .task-check {
+            width: 20px; height: 20px;
+            accent-color: #3b82f6;
+            cursor: pointer;
+        }
+        .task-text {
+            font-size: 1rem;
+        }
+        .completed .task-text {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+        .category-tag {
+            background: #e6edf6;
+            border-radius: 30px;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #2c3e5c;
+        }
+        .task-actions button {
+            background: none;
+            border: none;
+            color: #9aa9c1;
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .task-actions button:hover { color: #3b82f6; }
+
+        /* progress bar */
+        .progress-bar-bg {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 20px;
+            margin: 8px 0 4px;
+        }
+        .progress-fill {
+            background: #3b82f6;
+            height: 8px;
+            border-radius: 20px;
+            width: 0%;
+        }
+        .goal-meta, .challenge-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* expense summary */
+        .expense-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e9eef4;
+        }
+        .expense-income { color: #10b981; font-weight: 500; }
+        .expense-expense { color: #ef4444; font-weight: 500; }
+        .summary-line {
+            margin-top: 14px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        .add-expense {
+            margin-top: 18px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .add-expense input, .add-expense select {
+            padding: 8px 12px;
+            border: 1px solid #dde3ed;
+            border-radius: 30px;
+            background: white;
+            font-size: 0.9rem;
+        }
+        .btn {
+            background: #3b82f6;
+            border: none;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.15s;
+            border: 1px solid #3b82f6;
+        }
+        .btn-outline {
+            background: white;
+            color: #1e2b3c;
+            border: 1px solid #d0dbea;
+        }
+        .btn-outline:hover { background: #f8fafd; }
+
+        /* goals / challenges small forms */
+        .inline-form {
+            display: flex;
+            gap: 8px;
+            margin: 16px 0 8px;
+            flex-wrap: wrap;
+        }
+        .inline-form input, .inline-form select {
+            padding: 8px 12px;
+            border-radius: 30px;
+            border: 1px solid #dee6f0;
+            flex: 1 1 120px;
+        }
+
+        /* right column dashboard compact */
+        .quickview p { margin: 6px 0; color: #33455a; }
+        .divider { height: 1px; background: #ecf1f7; margin: 16px 0; }
+
+        /* responsive */
+        @media (max-width: 1000px) {
+            .summary-cards { grid-template-columns: repeat(2,1fr); }
+            .main-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 550px) {
+            .summary-cards { grid-template-columns: 1fr; }
+        }
+
+        /* utilities */
+        .mt-2 { margin-top: 10px; }
+        .flex { display: flex; align-items: center; gap: 10px; }
+        .text-small { font-size: 0.8rem; color: #6f7d9a; }
+    </style>
